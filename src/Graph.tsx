@@ -31,6 +31,7 @@ const Columns = styled.div`
   flex: 1;
   flex-direction: row;
   align-items: flex-end;
+  justify-content: space-evenly;
 `;
 
 export default Graph;

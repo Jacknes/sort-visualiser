@@ -20,7 +20,7 @@ const Root = styled.div<{ value: number }>`
   flex: 1;
   min-height: ${p => p.value - 15}vh;
   background-color: #c7eae4;
-  margin-left: 24px;
+  /* margin-left: 24px; */
   border-radius: 16px 16px 0 0;
   justify-content: center;
   align-items: flex-end;
