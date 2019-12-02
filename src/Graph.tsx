@@ -12,7 +12,7 @@ const Graph: React.FC<Props> = ({ arr }) => {
     <Root>
       <Columns>
         {arr.map(item => {
-          return <Column hideLabel={arr.length > 25} value={item.value} />;
+          return <Column numberOfColumns={arr.length} value={item.value} />;
         })}
       </Columns>
     </Root>
