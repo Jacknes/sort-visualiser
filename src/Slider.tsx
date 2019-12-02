@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -7,17 +7,20 @@ type Props = {
 };
 
 const Slider: React.FC<Props> = ({ value, onChange }) => {
+  const [sliderVal, setSliderVal] = useState(value);
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(parseInt(event.target.value));
-    console.log("e", event.target.value);
+    const val = parseInt(event.target.value);
+    setSliderVal(val);
+    onChange(val);
   };
   return (
     <Root>
+      <ValueText>Number of Items: {sliderVal}</ValueText>
       <SliderEl
         type="range"
         min="10"
         max="60"
-        value={value}
+        value={sliderVal}
         onChange={handleOnChange}
       />
     </Root>
@@ -25,12 +28,13 @@ const Slider: React.FC<Props> = ({ value, onChange }) => {
 };
 
 const Root = styled.div`
+  display: flex;
   margin-left: auto;
 `;
 
 const SliderEl = styled.input`
   -webkit-appearance: none;
-  width: 100%;
+  /* width: 100%; */
   height: 15px;
   border-radius: 5px;
   background: #d3d3d3;
@@ -45,9 +49,14 @@ const SliderEl = styled.input`
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #4caf50;
+    /* background: #4caf50; */
+    background: #5efc8d;
     cursor: pointer;
   }
+`;
+
+const ValueText = styled.span`
+  margin-right: 8px;
 `;
 
 export default Slider;

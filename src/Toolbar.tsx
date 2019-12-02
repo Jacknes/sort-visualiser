@@ -18,7 +18,9 @@ const Toolbar: React.FC<Props> = ({ numberOfItems, onChangeNumber }) => {
 const Root = styled.div`
   display: flex;
   flex: 1;
-  background-color: #393e41;
+  border-top: 2px solid #393e41;
+  /* background-color: #393e41; */
+  background-color: black;
   min-height: 10vh;
   /* width: 100vw; */
   font-family: "Courier New", Courier, monospace;
