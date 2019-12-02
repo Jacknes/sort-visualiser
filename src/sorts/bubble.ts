@@ -1,3 +1,1 @@
-export default (arr: number[]) => {
-  return arr;
-};
+export default () => {};

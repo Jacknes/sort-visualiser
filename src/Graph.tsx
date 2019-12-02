@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Column from "./Column";
 
 type Props = {
-  arr: { value: number; active: false }[];
+  arr: { key: number; value: number; active: false }[];
 };
 
 const Graph: React.FC<Props> = ({ arr }) => {
@@ -12,7 +12,13 @@ const Graph: React.FC<Props> = ({ arr }) => {
     <Root>
       <Columns>
         {arr.map(item => {
-          return <Column numberOfColumns={arr.length} value={item.value} />;
+          return (
+            <Column
+              key={item.key}
+              numberOfColumns={arr.length}
+              value={item.value}
+            />
+          );
         })}
       </Columns>
     </Root>
