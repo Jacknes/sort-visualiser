@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -8,6 +8,10 @@ type Props = {
 
 const Slider: React.FC<Props> = ({ value, onChange }) => {
   const [sliderVal, setSliderVal] = useState(value);
+
+  useEffect(() => {
+    setSliderVal(value);
+  }, [value]);
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const val = parseInt(event.target.value);
     setSliderVal(val);

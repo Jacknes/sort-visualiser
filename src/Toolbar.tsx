@@ -7,9 +7,13 @@ type Props = {
   onChangeNumber(value: number): void;
 };
 const Toolbar: React.FC<Props> = ({ numberOfItems, onChangeNumber }) => {
+  const handleClick = () => {
+    onChangeNumber(numberOfItems + 1);
+  };
   return (
     <Root>
       <Title>Sorting Algorithms Visualised</Title>
+      {/* <button onClick={handleClick} /> */}
       <Slider value={numberOfItems} onChange={onChangeNumber} />
     </Root>
   );

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Column from "./Column";
 
 type Props = {
-  arr: { key: number; value: number; active: false }[];
+  arr: { key: number; value: number; active: boolean }[];
 };
 
 const Graph: React.FC<Props> = ({ arr }) => {
@@ -14,7 +14,7 @@ const Graph: React.FC<Props> = ({ arr }) => {
         {arr.map(item => {
           return (
             <Column
-              key={item.key}
+              key={item.key.toString()}
               numberOfColumns={arr.length}
               value={item.value}
             />
@@ -37,7 +37,9 @@ const Columns = styled.div`
   flex: 1;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: space-evenly;
+  /* justify-content: flex-start; */
+  /* justify-content: space-evenly; */
+  transition: all 2000ms linear;
 `;
 
 export default Graph;
